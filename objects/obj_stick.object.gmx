@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_yscale = (room_height * FL_STICK_SCALE / sprite_height);
+            <string>event_inherited();
+
+image_yscale = (room_height * FL_STICK_SCALE / sprite_height);
 image_xscale = image_yscale;
 depth = 10;
 </string>

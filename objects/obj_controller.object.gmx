@@ -25,24 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Randomize
+            <string>event_inherited();
+
+// Randomize
 randomize();
 
 // Crear personaje
-char = instance_create(50, 50, obj_character);
-
-// Escalar
-char.image_yscale = (room_height * FL_CHAR_SCALE / char.sprite_height);
-char.image_xscale = char.image_yscale;
-char.image_angle = FL_CHAR_BASE_ANGLE;
-
-// Establecer posición
-char.x = room_width * FL_GAME_STARTX;
-char.y = room_height / 2 - char.sprite_height / 2;
+instance_create(50, 50, obj_character);
 
 // Iniciar contenedores
 alarm_set(0,FL_CONTAINER_TIME_FIRST);
 
+// Partida activa
+move = true;
 </string>
           </argument>
         </arguments>
@@ -65,21 +60,17 @@ alarm_set(0,FL_CONTAINER_TIME_FIRST);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_character.move) {
+            <string>if (move) {
     posy = room_height * random_range(FL_CONTAINER_MIN_TOP, FL_CONTAINER_MAX_TOP);
     
     container_top = instance_create(room_width, posy, obj_container);
-    container_top.hspeed = FL_CONTAINER_SPEED;
     
     stick_top = instance_create(room_width, 0, obj_stick);
-    stick_top.hspeed = FL_CONTAINER_SPEED;
     stick_top.image_yscale *= container_top.y / stick_top.sprite_height;
     
     container_down = instance_create(room_width, posy + room_height * FL_CONTAINER_DISTANCE, obj_container);
-    container_down.hspeed = FL_CONTAINER_SPEED;
     
     stick_down = instance_create(room_width, container_down.y, obj_stick);
-    stick_down.hspeed = FL_CONTAINER_SPEED;
     stick_down.image_yscale *= (room_height - container_down.y) / stick_down.sprite_height;
     
     alarm_set(0,FL_CONTAINER_TIME_DISTANCE);
@@ -106,7 +97,7 @@ alarm_set(0,FL_CONTAINER_TIME_FIRST);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_character.move) {
+            <string>if (!move) {
     game_restart();
 }
 </string>

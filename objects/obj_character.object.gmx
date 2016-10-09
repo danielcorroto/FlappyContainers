@@ -25,8 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity = FL_GAME_GRAVITY;
-move = true;
+            <string>// Escalar
+image_yscale = (room_height * FL_CHAR_SCALE / sprite_height);
+image_xscale = image_yscale;
+image_angle = FL_CHAR_BASE_ANGLE;
+
+// Establecer posición
+x = room_width * FL_GAME_STARTX;
+y = room_height / 2 - sprite_height / 2;
+
+// Física
+gravity = FL_GAME_GRAVITY;
+
 </string>
           </argument>
         </arguments>
@@ -50,27 +60,27 @@ move = true;
           <argument>
             <kind>1</kind>
             <string>// Rotar imagen según cae
-if (move and (image_angle &gt; 270 or image_angle &lt; 90)) {
+if (obj_controller.move and (image_angle &gt; 270 or image_angle &lt; 90)) {
     image_angle += FL_CHAR_CHANGE_ANGLE;
 }
 
 // No pasar por encima del borde superior
-if (move and y - sprite_height / 2 &lt; 0) {
+if (obj_controller.move and y - sprite_height / 2 &lt; 0) {
     y = sprite_height / 2;
 }
 
 // Detener si se sale de la pantalla
-if (move and y + sprite_height / 2 &gt; room_height) {
+if (obj_controller.move and y + sprite_height / 2 &gt; room_height) {
+    obj_controller.move = false;
     vspeed = 0;
     gravity = 0;
-    move = false;   
 }
 
-
+// Comprobación de colisiones
 if (instance_place(x, y, obj_enemy)) {
-    obj_character.move = 0;
-    obj_character.vspeed = 0;
-    obj_character.gravity = 0;
+    obj_controller.move = 0;
+    vspeed = 0;
+    gravity = 0;
 }
 </string>
           </argument>
@@ -94,7 +104,7 @@ if (instance_place(x, y, obj_enemy)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (move) {
+            <string>if (obj_controller.move) {
     vspeed = max(FL_CHAR_VSPEED, vspeed + FL_CHAR_VSPEED);
     image_angle = FL_CHAR_BASE_ANGLE;
 }
