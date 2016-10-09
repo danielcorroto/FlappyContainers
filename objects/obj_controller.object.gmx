@@ -29,11 +29,12 @@
 char = instance_create(50, 50, obj_character);
 
 // Escalar
-char.image_xscale = (room_width * .075 / char.sprite_width);
-char.image_yscale = (room_height * .075 / char.sprite_height);
+char.image_xscale = (room_width * FL_CHAR_SCALE / char.sprite_width);
+char.image_yscale = (room_height * FL_CHAR_SCALE / char.sprite_height);
+char.image_angle = FL_CHAR_BASE_ANGLE;
 
 // Establecer posición
-char.x = room_width * .55;
+char.x = room_width * FL_GAME_STARTX;
 char.y = room_height / 2 - char.sprite_height / 2;
 </string>
           </argument>

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity = 1;
+            <string>gravity = FL_GAME_GRAVITY;
 move = true;
 </string>
           </argument>
@@ -51,7 +51,7 @@ move = true;
             <kind>1</kind>
             <string>// Rotar imagen según cae
 if (move and (image_angle &gt; 270 or image_angle &lt; 90)) {
-    image_angle -= 3;
+    image_angle += FL_CHAR_CHANGE_ANGLE;
 }
 
 // No pasar por encima del borde superior
@@ -88,8 +88,8 @@ if (move and y + sprite_height / 2 &gt; room_height) {
           <argument>
             <kind>1</kind>
             <string>if (move) {
-    vspeed = -10;
-    image_angle = 45;
+    vspeed = FL_CHAR_VSPEED;
+    image_angle = FL_CHAR_BASE_ANGLE;
 }
 </string>
           </argument>
