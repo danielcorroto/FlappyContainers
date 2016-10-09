@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>image_xscale = (room_width * FL_CONTAINER_SCALE / sprite_width);
 image_yscale = (room_height * FL_CONTAINER_SCALE / sprite_height);
+
+count = 1;
 </string>
           </argument>
         </arguments>
@@ -51,6 +53,11 @@ image_yscale = (room_height * FL_CONTAINER_SCALE / sprite_height);
             <kind>1</kind>
             <string>if (x &lt; 0) {
     instance_destroy();
+}
+
+if (count &gt; 0 &amp;&amp; x &lt; obj_character.x) {
+    obj_controller.points += count;
+    count = 0;
 }
 
 if (!obj_character.move) {
