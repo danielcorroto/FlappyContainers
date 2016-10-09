@@ -65,6 +65,13 @@ if (move and y + sprite_height / 2 &gt; room_height) {
     gravity = 0;
     move = false;   
 }
+
+
+if (instance_place(x, y, obj_container)) {
+    obj_character.move = 0;
+    obj_character.vspeed = 0;
+    obj_character.gravity = 0;
+}
 </string>
           </argument>
         </arguments>
