@@ -88,7 +88,7 @@ if (move and y + sprite_height / 2 &gt; room_height) {
           <argument>
             <kind>1</kind>
             <string>if (move) {
-    vspeed = FL_CHAR_VSPEED;
+    vspeed = max(FL_CHAR_VSPEED, vspeed + FL_CHAR_VSPEED);
     image_angle = FL_CHAR_BASE_ANGLE;
 }
 </string>
