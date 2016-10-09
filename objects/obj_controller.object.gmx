@@ -43,8 +43,6 @@ char.y = room_height / 2 - char.sprite_height / 2;
 // Iniciar contenedores
 alarm_set(0,FL_CONTAINER_TIME_FIRST);
 
-// Propiedades de la partida
-points = 0;
 </string>
           </argument>
         </arguments>

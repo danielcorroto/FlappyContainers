@@ -8,13 +8,18 @@
   <sprites name="sprites">
     <sprite>sprites\spr_container_red</sprite>
     <sprite>sprites\spr_character</sprite>
+    <sprite>sprites\spr_score</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_score</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_container</object>
     <object>objects\obj_character</object>
     <object>objects\obj_controller</object>
+    <object>objects\obj_score</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>
