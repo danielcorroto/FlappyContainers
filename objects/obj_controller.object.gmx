@@ -71,8 +71,16 @@ alarm_set(0,FL_CONTAINER_TIME_FIRST);
     container_top = instance_create(room_width, posy, obj_container);
     container_top.hspeed = FL_CONTAINER_SPEED;
     
+    stick_top = instance_create(room_width, 0, obj_stick);
+    stick_top.hspeed = FL_CONTAINER_SPEED;
+    stick_top.image_yscale *= container_top.y / stick_top.sprite_height;
+    
     container_down = instance_create(room_width, posy + room_height * FL_CONTAINER_DISTANCE, obj_container);
     container_down.hspeed = FL_CONTAINER_SPEED;
+    
+    stick_down = instance_create(room_width, container_down.y, obj_stick);
+    stick_down.hspeed = FL_CONTAINER_SPEED;
+    stick_down.image_yscale *= (room_height - container_down.y) / stick_down.sprite_height;
     
     alarm_set(0,FL_CONTAINER_TIME_DISTANCE);
 }

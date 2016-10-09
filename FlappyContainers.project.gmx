@@ -9,6 +9,7 @@
     <sprite>sprites\spr_container_red</sprite>
     <sprite>sprites\spr_character</sprite>
     <sprite>sprites\spr_score</sprite>
+    <sprite>sprites\spr_stick</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -20,11 +21,13 @@
     <object>objects\obj_character</object>
     <object>objects\obj_controller</object>
     <object>objects\obj_score</object>
+    <object>objects\obj_stick</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>
   </rooms>
-  <constants number="13">
+  <constants number="14">
+    <constant name="FL_STICK_SCALE">.033</constant>
     <constant name="FL_CHAR_BASE_ANGLE">45</constant>
     <constant name="FL_CHAR_CHANGE_ANGLE">-3</constant>
     <constant name="FL_CHAR_SCALE">.075</constant>
