@@ -6,8 +6,13 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_container_red</sprite>
     <sprite>sprites\spr_character</sprite>
+    <sprite>sprites\spr_container_blue</sprite>
+    <sprite>sprites\spr_container_gray</sprite>
+    <sprite>sprites\spr_container_green</sprite>
+    <sprite>sprites\spr_container_red</sprite>
+    <sprite>sprites\spr_container_turquoise</sprite>
+    <sprite>sprites\spr_container_yellow</sprite>
     <sprite>sprites\spr_score</sprite>
     <sprite>sprites\spr_stick</sprite>
   </sprites>

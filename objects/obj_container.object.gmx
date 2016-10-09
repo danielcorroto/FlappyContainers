@@ -30,6 +30,14 @@
 image_yscale = (room_height * FL_CONTAINER_SCALE / sprite_height);
 image_xscale = image_yscale;
 
+sprites[0] = spr_container_blue;
+sprites[1] = spr_container_gray;
+sprites[2] = spr_container_green;
+sprites[3] = spr_container_red;
+sprites[4] = spr_container_turquoise;
+sprites[5] = spr_container_yellow;
+sprite_index = sprites[irandom(array_length_1d(sprites)-1)];
+
 count = 1;
 </string>
           </argument>
