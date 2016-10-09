@@ -22,6 +22,7 @@
     <object>objects\obj_controller</object>
     <object>objects\obj_score</object>
     <object>objects\obj_stick</object>
+    <object>objects\obj_enemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>
