@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Crear personaje
+            <string>// Randomize
+randomize();
+
+// Crear personaje
 char = instance_create(50, 50, obj_character);
 
 // Escalar
@@ -36,6 +39,42 @@ char.image_angle = FL_CHAR_BASE_ANGLE;
 // Establecer posición
 char.x = room_width * FL_GAME_STARTX;
 char.y = room_height / 2 - char.sprite_height / 2;
+
+// Iniciar contenedores
+alarm_set(0,FL_CONTAINER_TIME_FIRST);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (obj_character.move) {
+    posy = room_height * random_range(FL_CONTAINER_MIN_TOP, FL_CONTAINER_MAX_TOP);
+    
+    container_top = instance_create(room_width, posy, obj_container);
+    container_top.hspeed = FL_CONTAINER_SPEED;
+    
+    container_down = instance_create(room_width, posy + room_height * FL_CONTAINER_DISTANCE, obj_container);
+    container_down.hspeed = FL_CONTAINER_SPEED;
+    
+    alarm_set(0,FL_CONTAINER_TIME_DISTANCE);
+}
 </string>
           </argument>
         </arguments>
