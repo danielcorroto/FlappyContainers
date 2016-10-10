@@ -25,19 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(0, 0, obj_controller_background);
+            <string>// Nubes iniciales
+posx = 0;
+while (posx &lt; room_width) {
+    cloud = instance_create(0, 0, obj_cloud);
+    cloud.x = posx;
+    posx += irandom(60);
+}
 
-// Randomize
-randomize();
-
-// Crear personaje
-instance_create(50, 50, obj_character);
-
-// Iniciar contenedores
-alarm_set(0,FL_CONTAINER_TIME_FIRST);
-
-// Partida activa
-move = true;
+// Alarma para crear nubes
+alarm_set(0, 1);
 </string>
           </argument>
         </arguments>
@@ -60,45 +57,12 @@ move = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (move) {
-    posy = room_height * random_range(FL_CONTAINER_MIN_TOP, FL_CONTAINER_MAX_TOP);
+            <string>if (obj_controller.move) {
+    // Nueva nube
+    instance_create(0, 0, obj_cloud);
     
-    container_top = instance_create(room_width, posy, obj_container);
-    
-    stick_top = instance_create(room_width, 0, obj_stick);
-    stick_top.image_yscale *= container_top.y / stick_top.sprite_height;
-    
-    container_down = instance_create(room_width, posy + room_height * FL_CONTAINER_DISTANCE, obj_container);
-    
-    stick_down = instance_create(room_width, container_down.y, obj_stick);
-    stick_down.image_yscale *= (room_height - container_down.y) / stick_down.sprite_height;
-    
-    alarm_set(0,FL_CONTAINER_TIME_DISTANCE);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="53">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (!move) {
-    game_restart();
+    // Establecer entrada de la siguiente nube
+    alarm_set(0, 1 + irandom(60));
 }
 </string>
           </argument>

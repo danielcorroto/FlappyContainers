@@ -30,6 +30,7 @@
     <object>objects\obj_stick</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_cloud</object>
+    <object>objects\obj_controller_background</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>
