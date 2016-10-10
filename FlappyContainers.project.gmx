@@ -42,7 +42,7 @@
     <constant name="FL_CHAR_SCALE">.075</constant>
     <constant name="FL_CHAR_VSPEED">-15</constant>
     <constant name="FL_CONTAINER_DISTANCE">.345</constant>
-    <constant name="FL_CONTAINER_MAX_TOP">.575</constant>
+    <constant name="FL_CONTAINER_MAX_TOP">(1-FL_CONTAINER_MIN_TOP-FL_CONTAINER_DISTANCE)</constant>
     <constant name="FL_CONTAINER_MIN_TOP">.08</constant>
     <constant name="FL_CONTAINER_SCALE">.09</constant>
     <constant name="FL_CONTAINER_SPEED">-3</constant>
