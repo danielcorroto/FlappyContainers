@@ -40,15 +40,15 @@
     <constant name="FL_CHAR_BASE_ANGLE">45</constant>
     <constant name="FL_CHAR_CHANGE_ANGLE">-3</constant>
     <constant name="FL_CHAR_SCALE">.075</constant>
-    <constant name="FL_CHAR_VSPEED">-15</constant>
-    <constant name="FL_CONTAINER_DISTANCE">.345</constant>
+    <constant name="FL_CHAR_VSPEED">(-7*power(1.02,obj_controller.score))</constant>
+    <constant name="FL_CONTAINER_DISTANCE">(.5/power(1.01,obj_controller.score))</constant>
     <constant name="FL_CONTAINER_MAX_TOP">(1-FL_CONTAINER_MIN_TOP-FL_CONTAINER_DISTANCE)</constant>
     <constant name="FL_CONTAINER_MIN_TOP">.08</constant>
     <constant name="FL_CONTAINER_SCALE">.09</constant>
-    <constant name="FL_CONTAINER_SPEED">-3</constant>
-    <constant name="FL_CONTAINER_TIME_DISTANCE">70</constant>
+    <constant name="FL_CONTAINER_SPEED">(-2*power(1.01,obj_controller.score))</constant>
+    <constant name="FL_CONTAINER_TIME_DISTANCE">(100/power(1.01,obj_controller.score))</constant>
     <constant name="FL_CONTAINER_TIME_FIRST">50</constant>
-    <constant name="FL_GAME_GRAVITY">1</constant>
+    <constant name="FL_GAME_GRAVITY">(.9*power(1.01,obj_controller.score))</constant>
     <constant name="FL_GAME_STARTX">.55</constant>
   </constants>
   <help>

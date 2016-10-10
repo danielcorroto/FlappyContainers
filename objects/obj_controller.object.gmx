@@ -65,6 +65,7 @@ move = true;
     
     container_top = instance_create(room_width, posy, obj_container);
     container_top.x += container_top.sprite_width;
+    container_top.count = 1;
     
     stick_top = instance_create(room_width, 0, obj_stick);
     stick_top.x += container_top.sprite_width;

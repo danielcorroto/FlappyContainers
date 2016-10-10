@@ -38,7 +38,7 @@ sprites[4] = spr_container_turquoise;
 sprites[5] = spr_container_yellow;
 sprite_index = sprites[irandom(array_length_1d(sprites)-1)];
 
-count = 1;
+count = 0;
 </string>
           </argument>
         </arguments>
