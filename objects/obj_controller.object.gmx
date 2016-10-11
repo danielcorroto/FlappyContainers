@@ -74,6 +74,13 @@ move = true;
     stick_down = instance_create(room_width, container_down.y, obj_stick);
     stick_down.image_yscale *= (room_height - container_down.y) / stick_down.sprite_height;
     
+    // Aparición de objetos desde fuera de la pantalla
+    displacement = max( container_top.sprite_width, container_down.sprite_width );
+    container_top.x += displacement
+    stick_top.x += displacement
+    container_down.x += displacement
+    stick_down.x += displacement
+    
     alarm_set(0,FL_CONTAINER_TIME_DISTANCE);
 }
 </string>
