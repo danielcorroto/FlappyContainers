@@ -64,18 +64,14 @@ move = true;
     posy = room_height * random_range(FL_CONTAINER_MIN_TOP, FL_CONTAINER_MAX_TOP);
     
     container_top = instance_create(room_width, posy, obj_container);
-    container_top.x += container_top.sprite_width;
     container_top.count = 1;
     
     stick_top = instance_create(room_width, 0, obj_stick);
-    stick_top.x += container_top.sprite_width;
     stick_top.image_yscale *= container_top.y / stick_top.sprite_height;
     
     container_down = instance_create(room_width, posy + room_height * FL_CONTAINER_DISTANCE, obj_container);
-    container_down.x += container_down.sprite_width;
     
     stick_down = instance_create(room_width, container_down.y, obj_stick);
-    stick_down.x += container_down.sprite_width;
     stick_down.image_yscale *= (room_height - container_down.y) / stick_down.sprite_height;
     
     alarm_set(0,FL_CONTAINER_TIME_DISTANCE);
